@@ -1,0 +1,11 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.db
+backend/ml_artifacts/*.joblib
+data/uploads/*
+!data/uploads/.gitkeep
+.venv/

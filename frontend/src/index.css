@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Healthcare palette: deep teal primary, calm neutrals, clear severity colours */
+  --color-brand-50: #f0fdfa;
+  --color-brand-100: #ccfbf1;
+  --color-brand-200: #99f6e4;
+  --color-brand-500: #14b8a6;
+  --color-brand-600: #0d9488;
+  --color-brand-700: #0f766e;
+  --color-brand-800: #115e59;
+  --color-brand-900: #134e4a;
+  --color-brand-950: #042f2e;
+
+  --color-sev-ok: #059669;
+  --color-sev-warn: #d97706;
+  --color-sev-crit: #dc2626;
+  --color-sev-info: #0369a1;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: #f4f7f8;
+  color: #0f172a;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Skeleton shimmer used by loading placeholders */
+@keyframes shimmer { 0% { background-position: -400px 0 } 100% { background-position: 400px 0 } }
+.skeleton {
+  background: linear-gradient(90deg, #e8eef0 25%, #f4f7f8 37%, #e8eef0 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 0.5rem;
+}
+
+@keyframes pulse-dot { 0%, 100% { opacity: 1 } 50% { opacity: .35 } }
+.live-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+:focus-visible { outline: 2px solid var(--color-brand-600); outline-offset: 2px; }
